@@ -1,0 +1,52 @@
+@import "_colors";
+
+/* Splash 
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.splash-section {
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: $white;
+}
+
+.splash {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: block;
+}
+
+.splash .rings{
+	fill: $white;
+	animation-fill-mode: forwards;
+}
+
+#FISI {
+	fill: $white;
+	animation-fill-mode: forwards;
+	transition: fill 		.9s;
+}
+
+@keyframes pulse {
+	0%   { fill: $white; }
+	100% { fill: $black; }
+}
+
+@keyframes fade {
+	0%   { fill: $black; }
+	100% { fill: $white; }
+}
+
+@keyframes dissolve {
+	0%   { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@keyframes ripple {
+	0%   { fill: $white; }
+	20%  { fill: $black; }
+	100% { fill: $white; }
+}

@@ -1,0 +1,24 @@
+section {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	transition: transform 		.5s;
+
+}
+
+.scroll {
+	overflow: auto !important;
+}
+
+.current-section {
+	z-index: 100;
+}
+
+.next-section {
+	z-index: 99;
+}

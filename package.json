@@ -1,0 +1,27 @@
+{
+  "name": "fisi",
+  "version": "1.0.0",
+  "description": "Website for the FISI brand",
+  "main": "entry.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sam Oliver",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^6.3.4",
+    "babel-core": "^6.6.5",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "jquery": "^2.2.1",
+    "node-sass": "^3.4.2",
+    "postcss-loader": "^0.8.2",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack-bundle-tracker": "0.0.93"
+  }
+}

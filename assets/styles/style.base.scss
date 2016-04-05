@@ -1,0 +1,256 @@
+
+/*  Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+1. Fonts
+3. Elements
+3. Utility Classes
+4. About Section
+*/
+
+/*  1. Variables
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@import "_colors";
+@import "_break-points";
+@import "_timing";
+
+/*  2. Elements
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+html,
+body,
+html fieldset {
+	border-width: 0px;
+	margin: 0px;
+	padding: 0px;
+	// overflow-x:hidden;
+}
+
+body {
+	position: relative;
+	box-sizing: border-box;
+	height: 100vh;
+	overflow: hidden;
+	background-color: $white;
+	color: $black;
+}
+
+h1, h2, h3, h4, h5, p {
+	margin: 0px;
+	font-family: Helvetica, arial, sans-serif;
+	color: inherit;
+}
+
+h1, b {
+	font-style: italic;
+}
+
+h1 { font-size: 64pt; } 
+h2 { font-size: 24pt; } 
+h3 { font-size: 20pt; }
+h4 { font-size: 18pt; }
+p  { font-size: 18pt; }
+
+@media screen and (min-width: $largeMobile){
+	h1 { font-size: 96pt; } 
+	h2 { font-size: 34pt; } 
+	h3 { font-size: 24pt; }
+	h4 { font-size: 24pt; }
+	p  { font-size: 20pt; }
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button {
+	box-shadow: none;
+
+}
+
+
+/* 3.  Untility Classes
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.white {
+	background-color: $white;
+}
+
+svg .white {
+	fill: $white;
+}
+
+.black {
+	background-color: $black;
+}
+
+svg .black {
+	fill: $black
+}
+
+.clearfix:after {
+	content: " ";
+	display: block;
+	height: 0px;
+	width: 0px;
+}
+
+/* 4.About Section
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.about-section {
+	background-color: $black;
+	color: $white;
+}
+
+/* 4.1 Description
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.description-container {
+	text-align: center;
+	padding: 128px 0px;
+
+	@media screen and (min-width: $smallScreen){
+		text-align: left;
+	}
+}
+
+
+/* 4.2 location-container
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+
+.location-container {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0px 16px 32px 16px;
+	background-color: $black;
+
+	@media screen and (min-width: $smallScreen){
+		padding: 96px 64px;
+	}
+}
+
+
+/* 4.3 Footer
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.contact-container {
+	box-sizing: border-box;
+	padding: 32px 32px;
+
+	border-top: 1px solid $blackHighlight;
+
+	@media screen and (min-width: $largeMobile){
+		color: $blackHighlight;
+		padding: 64px;
+		transition: color 			$medium,
+					border-color 	$medium
+	}
+}
+
+
+.contact-container:hover {
+	@media screen and (min-width: $largeMobile){
+		border-color: $white;
+		color: $white;
+	}
+}
+
+.contact-container .display {
+	width: $largeScreen;
+	max-width: 100%;
+	margin: auto;
+	text-align: right;
+
+	@media screen and (min-width: $tablet){
+		display: flex;
+	}
+}
+
+.contact-container .display > div {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: 32px;
+	text-align: left;
+
+	@media screen and (min-width: $tablet){
+		width: 50%;
+		padding-right: 64px;
+		margin-bottom: 0px;
+	}
+
+}
+
+.contact-container .display > div:last-child {
+	margin-bottom: 0px;
+}
+
+.contact-container .description {
+	display: none;
+	@media screen and (min-width: $largeMobile){
+		display: block;
+	}
+}
+
+.contact-container .display .links {
+	margin-top: 16px;
+	text-align: left;
+}
+
+.contact-container a {
+	display: inline-block;
+	padding-bottom: 1px;
+	border-bottom: 1px solid;
+	margin-bottom: 8px;
+}
+
+.contact-container a:hover {
+	padding-bottom: 0px;
+	border-bottom: 2px solid;
+}
+
+.contact-container h3 { 
+	font-size: 20pt; 
+	padding-bottom: 4px;
+	border-bottom: 2px solid;
+	margin-bottom: 16px;
+}
+
+.contact-container p  { 
+	font-size: 14pt; 
+	line-height: 125%;
+	text-align: left;
+}
+
+/* 5. Copyright
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.copyright {
+	padding: 16px;
+	border-top: 1px solid $blackHighlight
+}
+
+.copyright .display {
+	width: $largeScreen;
+	max-width: 100%;
+	margin: auto;
+
+}
+
+.copyright p {
+	font-size: 10pt;
+	color: $blackHighlight;
+}
+
+

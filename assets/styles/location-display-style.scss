@@ -1,0 +1,255 @@
+@import "_colors";
+@import "_timing";
+@import "_break-points.scss";
+
+
+/* 1. Location Display
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$borderWidth: 18px;
+$tinyMapHeight: 320px;
+$smallMapHeight: 480px;
+$largeMapHeight: 560px;
+
+.location-container {
+	box-sizing: border-box;
+	width: 100%;
+	padding-top: 32px;
+	background-color: $black;
+
+	@media screen and (min-width: $smallScreen){
+		padding: 32px;
+	}
+}
+
+.location-display {
+	display: block;
+	box-sizing: border-box;
+	width: auto;
+
+	@media screen and (min-width: $smallScreen){
+		display: flex;
+		height: $smallMapHeight;
+	}
+
+	@media screen and (min-width: $largeScreen){
+		height: $largeMapHeight;
+	}
+}
+
+
+/* 2. Coordinate display
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.coordinate-display {
+	position: relative;
+	display: table; 
+	top: 0px;
+	width: 100%;
+	text-align: center;
+	background-color: $black;
+	transition: background-color 	$quick,
+				top 				$quick,
+				left 				$quick;
+
+	@media screen and (min-width: $smallScreen){
+		left: 0px;
+		height: 100%;
+		width: $smallMapHeight;
+	};
+
+	@media screen and (min-width: $largeScreen){
+		left: 0px;
+		height: 100%;
+		width: $largeMapHeight;
+	}
+}
+
+.coordinate-display:hover  {
+	top: 8px;
+
+	@media screen and (min-width: $smallScreen){
+		top: 0px;
+		left: 8px;
+	}
+}
+
+.coordinate-display > div {
+	padding: 32px 0px;
+	border-style: solid;
+	border-color: $white;
+	border-width: 18px 18px 0px 18px;
+	
+	@media screen and (min-width: $smallScreen){
+		display: table-cell;
+		vertical-align: middle;
+		padding: 0px;
+		border-width: 18px 0px 18px 18px;
+	}
+}
+
+.coordinate {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+#latitude.coordinate {
+	margin-bottom: 32px;
+
+	@media screen and (min-width: $largeMobile){
+		width: auto;
+		text-align: right;
+		padding-right: 48%;
+	}
+
+	@media screen and (min-width: $smallScreen){
+		padding-right: 38%;
+	}
+
+	@media screen and (min-width: $largeScreen){
+		padding-right: 48%;
+	}
+}
+
+#longitude.coordinate {
+
+
+	@media screen and (min-width: $largeMobile){
+		width: auto;
+		text-align: left;
+		padding-left: 48%;
+	}
+
+	@media screen and (min-width: $smallScreen){
+		padding-left: 38%;
+	}
+
+	@media screen and (min-width: $largeScreen){
+		padding-left: 48%;
+	}
+}
+
+.coordinate > div {
+	position: relative;
+	display: inline-block;
+	margin: auto;
+}
+
+.coordinate > div:before {
+	position: absolute;
+	content: "";
+	display: block;
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	background-color: $white;
+	border: 8px solid $white;
+	box-shadow: inset 0px 0px 0px 8px $black;
+	transform: skewX(-26.56deg);
+	transition: background-color 	$delayQuick,
+				border-color 		$quick,
+				box-shadow 			$quick;
+}
+
+.coordinate-display:hover .coordinate > div:before{
+	background-color: $black;
+	border-color: $black;
+	box-shadow: inset 0px 0px 0px 8px $white;
+}
+
+.coordinate h3 {
+	position: relative;
+	z-index: 1;
+	padding: 32px;
+	margin: 0px;
+	color: $black;
+	transition: color 		$delayQuick;
+}
+
+.coordinate-display:hover  .coordinate h3 {
+	color: $white;
+}
+
+/* 3. Map Border
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$arrowLength: 108px;
+$arrowWidth: 72px;
+
+
+.right-arrow,
+.bottom-arrow {
+	position: absolute;
+	background-color: $white;
+	border-style: solid;
+	border-color: $black;
+}
+
+.right-arrow {
+	display: none;
+
+	@media screen and (min-width: $smallScreen){
+		box-sizing: border-box;
+		display: block;
+		top: 0px;
+		right: -($borderWidth * 2 - 1);
+		width: $borderWidth * 2;
+		height: 100%;
+		padding-top: ($smallMapHeight - $arrowWidth) / 2;
+		border-width: 0px $borderWidth 0px 0px;
+	}
+
+	@media screen and (min-width: $smallScreen){
+		padding-top: ($largeMapHeight - $arrowWidth) / 2;
+	}
+}
+
+.right-arrow svg {
+	display: inline-block;
+	height: $arrowWidth;
+	width: $arrowLength;
+	margin-left: -1px;
+}
+
+.bottom-arrow {
+	display: block;
+	bottom: -($borderWidth * 2 - 1);
+	left: 0px;
+	width: 100%;
+	height: $borderWidth;
+	background-color: $white;
+	border-width: 0px 0px $borderWidth 0px;
+	text-align: center;
+
+	@media screen and (min-width: $smallScreen){
+		display: none;
+	}
+}
+
+.bottom-arrow svg {
+	display: inline-block;
+	width: $arrowWidth;
+	height: $arrowLength;
+	margin-top: -1px;
+}
+
+/* 4. Map display
+––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.map {
+	width: auto;
+	height: $smallMapHeight;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	@media screen and (min-width: $smallScreen){
+		flex: 1;
+		height: auto;
+	}
+}
+

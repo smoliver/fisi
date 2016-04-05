@@ -1,0 +1,23 @@
+{
+  "status": "done",
+  "chunks": {
+    "base": [
+      {
+        "name": "base.js",
+        "path": "/Users/SamO/projects/2016_winter/FISI/website/assets/bundles/base.js"
+      },
+      {
+        "name": "css/base.css",
+        "path": "/Users/SamO/projects/2016_winter/FISI/website/assets/bundles/css/base.css"
+      },
+      {
+        "name": "base.js.map",
+        "path": "/Users/SamO/projects/2016_winter/FISI/website/assets/bundles/base.js.map"
+      },
+      {
+        "name": "css/base.css.map",
+        "path": "/Users/SamO/projects/2016_winter/FISI/website/assets/bundles/css/base.css.map"
+      }
+    ]
+  }
+}
